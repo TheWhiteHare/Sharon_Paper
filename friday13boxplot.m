@@ -68,13 +68,12 @@ y = [activation_prior; activation_f13; activation_next];
 % notBoxPlot(y,x,'markMedian',true)
 % ylim([0 10])
 
-output = boxplot(hAxes,y,x)
+output = boxplot(y,x)
 set(gca,'XTickLabels',{'prior week','friday the 13th','following week'})
 %set(hBoxPlot,'Color','k')
 ylabel('trauma activations')
 ylim([0 10]);
 
-jitter = gaussmf(linspace(0.75,1.25,length(activation_prior)),[0.1 1]);
 s = scatter(ones(length(activation_f13),1),activation_prior,'fill','jitter','on','jitterAmount', jitter)
 set(s,'MarkerFaceColor',color_index{1},'MarkerEdgeColor',[0 0 0])
 
